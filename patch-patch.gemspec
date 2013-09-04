@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'patch_patch/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'patch_patch'
+  spec.name          = 'patch-patch'
   spec.version       = PatchPatch::VERSION
   spec.authors       = ['Rémi Prévost']
   spec.email         = ['rprevost@mirego.com']
