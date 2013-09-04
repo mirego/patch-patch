@@ -16,13 +16,9 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-
-```bash
-$ gem install patch-patch
-```
-
 ## Usage
+
+PatchPatch hooks itself automatically into Rails’ routing engine. You don’t have to enable or configure it.
 
 Let’s say we have a RESTful API with a single `users` resource.
 
