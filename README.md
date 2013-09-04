@@ -1,6 +1,6 @@
 # PatchPatch
 
-PatchPatch changes Rails’ default behavior of mapping PUT and PATCH requests on resources to the same action.
+PatchPatch changes Rails’ default behavior of mapping `PUT` and `PATCH` requests on resources to the same action.
 
 ## Installation
 
@@ -21,6 +21,50 @@ Or install it yourself as:
 ```bash
 $ gem install patch-patch
 ```
+
+## Usage
+
+Let’s say we have a RESTful API with a single `users` resource.
+
+```ruby
+# config/routes.rb
+Foo::Application.routes.draw do
+  resources :users
+end
+```
+
+### Before
+
+```bash
+$ rake routes
+   Prefix Verb   URI Pattern               Controller#Action
+    users GET    /users(.:format)          users#index
+          POST   /users(.:format)          users#create
+ new_user GET    /users/new(.:format)      users#new
+edit_user GET    /users/:id/edit(.:format) users#edit
+     user GET    /users/:id(.:format)      users#show
+          PATCH  /users/:id(.:format)      users#update
+          PUT    /users/:id(.:format)      users#update
+          DELETE /users/:id(.:format)      users#destroy
+```
+
+### After
+
+```bash
+$ rake routes
+   Prefix Verb   URI Pattern               Controller#Action
+    users GET    /users(.:format)          users#index
+          POST   /users(.:format)          users#create
+ new_user GET    /users/new(.:format)      users#new
+edit_user GET    /users/:id/edit(.:format) users#edit
+     user PATCH  /users/:id(.:format)      users#partial_update
+          GET    /users/:id(.:format)      users#show
+          PATCH  /users/:id(.:format)      users#update
+          PUT    /users/:id(.:format)      users#update
+          DELETE /users/:id(.:format)      users#destroy
+```
+
+_Note: the old `PATCH` route is still there but it will never be matched since our `#partial_update` route comes first. The old `PUT` route will still route to `#update` though._
 
 ## License
 
