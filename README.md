@@ -3,7 +3,7 @@
     <img src="http://i.imgur.com/pnrKBDm.png" alt="PatchPatch" />
   </a>
   <br />
-  PatchPatch changes Rails’ default behavior of mapping <code>PUT</code> and <code>PATCH</code> requests on resources to the same action.
+  PatchPatch changes Rails’ default behavior of mapping <code>PUT</code> and <code>PATCH</code><br /> requests on resources to the same action.
   <br /><br />
   <a href="https://rubygems.org/gems/patch-patch"><img src="https://badge.fury.io/rb/patch-patch.png" /></a>
   <a href="https://codeclimate.com/github/mirego/patch-patch"><img src="https://codeclimate.com/github/mirego/patch-patch.png" /></a>
