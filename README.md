@@ -1,6 +1,15 @@
-# PatchPatch
+<p align="center">
+  <a href="https://github.com/mirego/patch-patch">
+    <img src="http://i.imgur.com/pnrKBDm.png" alt="PatchPatch" />
+  </a>
+  <br />
+  PatchPatch changes Rails’ default behavior of mapping <code>PUT</code> and <code>PATCH</code> requests on resources to the same action.
+  <br /><br />
+  <a href="https://rubygems.org/gems/patch-patch"><img src="https://badge.fury.io/rb/patch-patch.png" /></a>
+  <a href="https://codeclimate.com/github/mirego/patch-patch"><img src="https://codeclimate.com/github/mirego/patch-patch.png" /></a>
+</p>
 
-PatchPatch changes Rails’ default behavior of mapping `PUT` and `PATCH` requests on resources to the same action.
+---
 
 ## Installation
 
@@ -65,6 +74,8 @@ _Note: the old `PATCH` route is still there but it will never be matched since o
 ## License
 
 `PatchPatch` is © 2013 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/patch-patch/blob/master/LICENSE.md) file.
+
+The patch logo is based on [this lovely icon](http://thenounproject.com/noun/patch/#icon-No20089) by [Christina W](http://thenounproject.com/stinamc), from The Noun Project. Used under a [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/) license.
 
 ## About Mirego
 
