@@ -3,8 +3,8 @@ require 'spec_helper'
 describe PatchPatch do
   let(:routes) { ActionDispatch::Routing::RouteSet.new }
   let(:route_details) do
-    routes.routes.routes.inject([]) do |memo, route|
-      memo << {
+    routes.routes.routes.map do |route|
+      {
         controller: route.defaults[:controller],
         action: route.defaults[:action],
         method: route.constraints[:request_method].source.gsub(/[^A-Z]+/, '')
