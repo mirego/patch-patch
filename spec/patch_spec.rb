@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe PatchPatch do
   let(:routes) { ActionDispatch::Routing::RouteSet.new }
+  let(:custom_route) { { controller: 'users', action: 'partial_update', method: 'PATCH' } }
   let(:route_details) do
     routes.routes.routes.map do |route|
       {
@@ -17,14 +18,14 @@ describe PatchPatch do
       routes.draw { resources :users }
     end
 
-    it { expect(route_details.first).to eql({ controller: 'users', action: 'partial_update', method: 'PATCH' }) }
+    it { expect(route_details.first).to eql(custom_route) }
   end
 
-  context 'with `partial_update`' do
+  context 'with `partial_update` removed from actions' do
     before do
       routes.draw { resources :users, except: [:partial_update] }
     end
 
-    it { expect(route_details).to_not include({ controller: 'users', action: 'partial_update', method: 'PATCH' }) }
+    it { expect(route_details).to_not include(custom_route) }
   end
 end
