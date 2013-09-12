@@ -1,7 +1,12 @@
 require 'patch_patch/version'
 
+# Activesupport
+require 'active_support'
+require 'active_support/core_ext/module/aliasing'
+
 # ActionDispatch
-require 'action_dispatch/routing/mapper'
+require 'action_dispatch/routing'
+require 'action_dispatch/routing/route_set'
 
 module ActionDispatch::Routing::Mapper::Resources
   def resources_with_patch_fix(*resources, &block)
