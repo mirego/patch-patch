@@ -69,7 +69,7 @@ edit_user GET    /users/:id/edit(.:format) users#edit
           DELETE /users/:id(.:format)      users#destroy
 ```
 
-_Note: the old `PATCH` route is still there but it will never be matched since our `#partial_update` route comes first. The old `PUT` route will still route to `#update` though._
+Note: the old `PATCH` route is still there but it will never be matched since our `#partial_update` route comes first. The old `PUT` route will still route to `#update` though.
 
 ## License
 
